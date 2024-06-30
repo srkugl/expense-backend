@@ -8,7 +8,7 @@ COPY *.js .
 RUN chown -R expense:expense /opt/app
 USER expense
 ENV DB_HOST=$DB_HOST
-#CMD ["node", "index.js"]
-CMD ["sleep", "1000000"]
+CMD ["node", "index.js"]
+
 
 
