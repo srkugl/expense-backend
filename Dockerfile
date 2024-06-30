@@ -1,0 +1,9 @@
+FROM node:20-alpine
+RUN adduser -D -s /bin/sh expense
+RUN mkdir -p /opt/app
+WORKDIR /opt/app
+COPY package.json .
+COPY *.js .
+RUN chown -R expense:expense /opt/app
+USER expense
+CMD ["node", "index.js"]
